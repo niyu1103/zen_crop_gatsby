@@ -1,6 +1,6 @@
 // import { isHomeCheck, isMobileCheck, isAboutCheck } from '../helpers';
-// import * as THREE from 'three'
-import * as THREE from '../libs/three.module.js';
+import * as THREE from 'three'
+// import * as THREE from '../libs/three.module.js';
 import { modelData } from './modelData';
 import PersCamera from './persCamera.js';
 // import { randomNum } from '../math';
@@ -10,7 +10,7 @@ import PersCamera from './persCamera.js';
 
 export default class Particle {
   constructor() {
-    this.renderer, this.camera, this.scene, this.canvas;
+    // this.renderer, this.camera, this.scene, this.canvas;
     this.camPos = modelData.camera.pos;
     this.frameCount = 0;
     this.bgColor = 0x072534;

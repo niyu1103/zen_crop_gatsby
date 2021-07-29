@@ -1,6 +1,7 @@
+import { getWindow } from 'ssr-window';
 import { randomNum } from '../math';
 
-
+const window = getWindow();
 // React.useState({
 //   'width': window.innerWidth,
 //   'height': window.innerHeight

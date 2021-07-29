@@ -12,6 +12,12 @@ module.exports = {
         url: `https://portal2021.zenkigen.co.jp/graphql`,
       },
     },
+    {
+      resolve: `gatsby-plugin-compile-es6-packages`,
+      options: {
+        modules: [`three`]
+      }
+    },
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
@@ -23,5 +29,5 @@ module.exports = {
         path: `${__dirname}/static/images`,
       },
     },
-  ],
+  ]
 }

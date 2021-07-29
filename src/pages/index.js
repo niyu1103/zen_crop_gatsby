@@ -7,7 +7,8 @@ import Fadein from '../utils/Fadein'
 import SpanWrap from '../utils/SpanWrap'
 import Slider from '../utils/Slider'
 import { isIE } from 'react-device-detect';
-// import HomeWebGl from '../components/webgl/homeWebgl';
+import HomeWebGl from '../components/webgl/homeWebgl';
+import Particle from '../components/webgl/particle';
 
 export default () => {
   const [mainShow, setMainShow] = useState(false);
@@ -26,9 +27,10 @@ export default () => {
       setMainShow(true)
     }, 2000)
 
-    // const homeWebGl = new HomeWebGl();
-    // homeWebGl.init(glElement.current)
-
+    const homeWebGl = new HomeWebGl();
+    homeWebGl.init(glElement.current)
+    const particle = new Particle();
+    particle.init();
   }, [])
 
   return (

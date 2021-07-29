@@ -4,12 +4,18 @@ import Meta from '../components/meta'
 import { Layout } from "../components/layout"
 import Fadein from '../utils/Fadein'
 import SpanWrap from '../utils/SpanWrap'
+import WebGl from '../components/webgl/webgl';
 
 const Page = ({ data }) => {
 
   useEffect(() => {
     Fadein();
     SpanWrap();
+
+    if (window.location.pathname.indexOf('aboutus') > -1) {
+      const webGl = new WebGl();
+      webGl.init();
+    }
   }, [])
 
 

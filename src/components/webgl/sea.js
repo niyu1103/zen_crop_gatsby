@@ -1,5 +1,5 @@
-import * as THREE from '../libs/three.module.js';
-// import * as THREE from 'three'
+// import * as THREE from '../libs/three.module.js';
+import * as THREE from 'three'
 
 export default class Sea extends THREE.Object3D {
   constructor() {
@@ -9,8 +9,11 @@ export default class Sea extends THREE.Object3D {
   }
 
   init() {
-    this.SEPARATION = 20, this.AMOUNTX = 200, this.AMOUNTY = 200;
-    this.particles = 0, this.count = 0;
+    this.SEPARATION = 20;
+    this.AMOUNTX = 200;
+    this.AMOUNTY = 200;
+    this.particles = 0;
+    this.count = 0;
   }
 
   setup() {
