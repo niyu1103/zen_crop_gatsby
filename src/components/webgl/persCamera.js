@@ -1,13 +1,15 @@
-import * as THREE from '../libs/three.module.js';
+import * as THREE from 'three';
 // import * as THREE from 'three'
 // import { isMobileCheck } from '../helpers';
 import { isMobile } from 'react-device-detect';
 import { randomNum } from '../math';
 import { modelData } from './modelData';
 
-export default class persCamera extends THREE.PerspectiveCamera {
+
+export default class PersCamera extends THREE.PerspectiveCamera {
   constructor(angle, aspect, near, far) {
     super(angle, aspect, near, far);
+
     // super(75, width / height, 1, 1000);
     this.aspect = aspect;
     this.updateProjectionMatrix();

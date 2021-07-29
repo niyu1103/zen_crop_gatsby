@@ -1,6 +1,7 @@
 // import { isHomeCheck, isMobileCheck, isAboutCheck, uA } from '../helpers';
-// import * as THREE from 'three'
-import * as THREE from '../libs/three.module.js';
+import { uA } from '../helpers';
+import * as THREE from 'three'
+// import * as THREE from '../libs/three.module.js';
 import { modelData } from './modelData';
 import PersCamera from './persCamera.js';
 // import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
@@ -15,7 +16,7 @@ import AboutusNav from './aboutusNav';
 
 export default class WebGl {
   constructor() {
-    this.renderer, this.camera, this.scene, this.canvas;
+    // this.renderer, this.camera, this.scene, this.canvas;
     // this.controls;
     // this.clock;
     // this.mainScroll;
@@ -173,6 +174,7 @@ export default class WebGl {
       });
     }, options);
     this.aboutEl.forEach(section => {
+      if (!section) return;
       observer.observe(section);
     });
   }

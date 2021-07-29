@@ -1,5 +1,5 @@
-// import * as THREE from 'three'
-import * as THREE from '../libs/three.module.js';
+import * as THREE from 'three'
+// import * as THREE from '../libs/three.module.js';
 import { modelData } from './modelData';
 import PersCamera from './persCamera.js';
 import { isMobile } from 'react-device-detect';
@@ -9,7 +9,7 @@ import Triangular from './triangular'
 
 export default class HomeWebGl {
   constructor() {
-    this.renderer, this.camera, this.scene, this.canvas;
+    // this.renderer, this.camera, this.scene, this.canvas;
     this.bgColor = modelData.background.colors;
     this.camPos = modelData.camera.pos;
     this.camLook = modelData.camera.look;
