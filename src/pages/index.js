@@ -8,6 +8,7 @@ import HomePostInfo from "../components/HomePostInfo"
 import HomePostMedia from "../components/HomePostMedia"
 import { StaticImage } from "gatsby-plugin-image"
 import Fadein from '../utils/Fadein'
+import FadeinScroll from '../utils/FadeinScroll'
 import SpanWrap from '../utils/SpanWrap'
 import Slider from '../utils/Slider'
 import { isIE } from 'react-device-detect';
@@ -25,6 +26,7 @@ export default () => {
 
   useEffect(() => {
     Fadein();
+    FadeinScroll();
     SpanWrap();
 
     setTimeout(() => {

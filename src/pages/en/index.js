@@ -2,12 +2,9 @@ import React, { useState, useEffect, useRef } from "react"
 import { Link } from "gatsby"
 import Meta from '../../components/meta'
 import { Layout } from "../../components/layout"
-import HomePostAll from "../../components/HomePostAll"
-import HomePostPressrelease from "../../components/HomePostPressrelease"
-import HomePostInfo from "../../components/HomePostInfo"
-import HomePostMedia from "../../components/HomePostMedia"
 import { StaticImage } from "gatsby-plugin-image"
 import Fadein from '../../utils/Fadein'
+import FadeinScroll from '../utils/FadeinScroll'
 import SpanWrap from '../../utils/SpanWrap'
 import Slider from '../../utils/Slider'
 import { isIE } from 'react-device-detect';
@@ -23,6 +20,7 @@ export default () => {
 
   useEffect(() => {
     Fadein();
+    FadeinScroll();
     SpanWrap();
 
     setTimeout(() => {

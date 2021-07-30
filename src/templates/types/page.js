@@ -6,7 +6,6 @@ import Fadein from '../../utils/Fadein'
 import SpanWrap from '../../utils/SpanWrap'
 import WebGl from '../../components/webgl/webgl';
 
-console.log(window.location.pathname);
 const Page = ({ data }) => {
 
   useEffect(() => {
