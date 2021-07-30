@@ -1,13 +1,17 @@
 import React, { useState, useEffect, seEffect } from "react"
 import { graphql } from "gatsby"
+import { Helmet } from "react-helmet";
 import Meta from '../../components/meta'
 import { Layout } from "../../components/layout"
 import Fadein from '../../utils/Fadein'
 import SpanWrap from '../../utils/SpanWrap'
 import WebGl from '../../components/webgl/webgl';
+import { initScript } from '../../utils/GoogleMap';
+import { getWindow } from 'ssr-window';
 
 const Page = ({ data }) => {
 
+const Page = ({ data }) => {
   useEffect(() => {
     Fadein();
 
@@ -22,6 +26,22 @@ const Page = ({ data }) => {
     }
   }, [])
 
+  const renderHelmet = () => {
+    if (window.location.pathname.indexOf('company') > -1) {
+      return (
+        <Helmet>
+          <script>{initScript}</script>
+          <script
+            type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap"
+            async defe
+          >
+          </script>
+        </Helmet>
+      );
+    }
+    return null;
+  }
 
   return (
     <Layout>
@@ -31,6 +51,7 @@ const Page = ({ data }) => {
         description="株式会社ZENKIGENは「テクノロジーを通じて人と企業が全機現できる社会の創出に貢献する」社会を目指します"
         ogpImage=""
       />
+      {renderHelmet()}
 
       <div dangerouslySetInnerHTML={{ __html: data.wpPage.content }} />
 
