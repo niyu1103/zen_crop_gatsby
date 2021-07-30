@@ -80,9 +80,9 @@ export default () => (
       </div>
       <div className="footer-column-bottom">
         <ul>
-          <li><a href="https://zenkigen.co.jp/privacy/">プライバシーポリシー</a></li>
-          <li><a href="https://zenkigen.co.jp/security/">情報セキュリティ方針</a></li>
-          <li><a href="https://zenkigen.co.jp/personalinfo/">個人情報の取扱いについて</a></li>
+          <li><Link to="/privacy">プライバシーポリシー</Link></li>
+          <li><Link to="/security">情報セキュリティ方針</Link></li>
+          <li><Link to="/personalinfo">個人情報の取扱いについて</Link></li>
         </ul>
         <p className="copyright"><small><span lang="en">&copy;</span> ZENKIGEN, Inc.</small></p>
       </div>

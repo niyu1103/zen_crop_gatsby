@@ -1,49 +1,32 @@
 
 const path = require(`path`)
+const glob = require(`glob`)
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 
-exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
+const createContentTypes = require(`./create/createContentTypes`)
+const createBlog = require(`./create/createBlog`)
 
-  const result = await graphql(`
-    query {
-      allWpPage {
-        edges {
-          node {
-            id
-            slug
-          }
-        }
-      }
-      allWpPost(sort: {fields: date, order: DESC}) {
-        edges {
-          node {
-            id
-            slug
-          }
+const getTemplates = () => {
+  const sitePath = path.resolve(`./`)
+  return glob.sync(`./src/templates/**/*.js`, { cwd: sitePath })
+}
+
+exports.createPages = async (props) => {
+  const { data: wpSettings } = await props.graphql(/* GraphQL */ `
+    {
+      wp {
+        readingSettings {
+          postsPerPage
         }
       }
     }
   `)
 
-  // 固定ページ
-  result.data.allWpPage.edges.forEach(({ node }) => {
-    createPage({
-      path: `/${node.slug}/`,
-      component: path.resolve("./src/templates/page.js"),
-      context: {
-        id: node.id,
-      },
-    })
-  })
-  result.data.allWpPost.edges.forEach(({ node }) => {
-    const title = encodeURI(node.slug)
-    createPage({
-      path: `/news/${node.slug}/`,
-      component: path.resolve("./src/templates/post.js"),
-      context: {
-        id: node.id,
-      },
-    })
-  })
+  const perPage =  10
+  const blogURI = "/news"
+  const templates = getTemplates()
+
+  await createContentTypes(props, { templates })
+  await createBlog(props, { perPage, blogURI })
+
 }

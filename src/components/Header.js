@@ -82,7 +82,7 @@ export default () => {
         <div className="header-container">
           <div className="site-id">
             <a href="https://zenkigen.co.jp">
-              <span class="site-id-img">ZENKIGEN</span>
+              <span className="site-id-img">ZENKIGEN</span>
             </a>
           </div>
           <nav className="gnav">

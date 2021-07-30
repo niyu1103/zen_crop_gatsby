@@ -7,7 +7,7 @@ const renderPreviousLink = ({ hasPreviousPage, currentPage, archivePath }) => {
   if (2 === currentPage) {
     previousLink = archivePath
   } else if (2 < currentPage) {
-    previousLink = `${archivePath}page/${currentPage - 1}`
+    previousLink = `${archivePath}/page/${currentPage - 1}`
   }
 
   if (hasPreviousPage) {
@@ -36,7 +36,7 @@ const renderNextLink = ({ hasNextPage, currentPage, archivePath }) => {
     return (
       <Link
         className={"next page-numbers"}
-        to={`${archivePath}page/${currentPage + 1}`}
+        to={`${archivePath}/page/${currentPage + 1}`}
       >
         <span className="nav-next-text">
           Older <span className="nav-short">Posts</span>

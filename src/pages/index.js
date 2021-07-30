@@ -1,7 +1,11 @@
 import React, { useState, useEffect, useRef } from "react"
-import { graphql } from "gatsby"
+import { Link } from "gatsby"
 import Meta from '../components/meta'
 import { Layout } from "../components/layout"
+import HomePostAll from "../components/HomePostAll"
+import HomePostPressrelease from "../components/HomePostPressrelease"
+import HomePostInfo from "../components/HomePostInfo"
+import HomePostMedia from "../components/HomePostMedia"
 import { StaticImage } from "gatsby-plugin-image"
 import Fadein from '../utils/Fadein'
 import SpanWrap from '../utils/SpanWrap'
@@ -13,7 +17,11 @@ import Particle from '../components/webgl/particle';
 export default () => {
   const [mainShow, setMainShow] = useState(false);
   const [loaded, onLoad] = useState(false);
+  const [currentTab, setCurrentTab] = useState('all');
   const glElement = useRef(null);
+  const setTab = (currentTab,e) => {
+    setCurrentTab(currentTab);
+  }
 
   useEffect(() => {
     Fadein();
@@ -31,7 +39,29 @@ export default () => {
     homeWebGl.init(glElement.current)
     const particle = new Particle();
     particle.init();
+
   }, [])
+
+  const postElm = (currentTab) => {
+
+    if (currentTab === 'all'){
+      return (
+        <HomePostAll />
+      )
+    } else if (currentTab === 'pressrelease'){
+      return (
+      <HomePostPressrelease />
+      )
+    } else if (currentTab === 'info') {
+      return (
+      <HomePostInfo />
+      )
+    } else if (currentTab === 'media') {
+      return (
+      <HomePostMedia />
+      )
+    }
+  }
 
   return (
     <Layout>
@@ -42,7 +72,7 @@ export default () => {
         ogpImage=""
       />
       <div id="wrap-loader" className={loaded ? 'hide remove' : ''}>
-        <div class="loader">Loading...</div>
+        <div className="loader">Loading...</div>
       </div>
       <div className="main-visual">
         <div className="main-title td04">
@@ -73,47 +103,19 @@ export default () => {
         </div>
         <div className="content-container">
           <ul className="news-nav sc-f">
-            <li className="current">すべて</li>
-            <li>プレスリリース</li>
-            <li>お知らせ</li>
-            <li>メディア</li>
+            <li className={currentTab === 'all'  ? 'current' : ''} onClick={setTab.bind(this, "all")}>すべて</li>
+            <li className={currentTab === 'pressrelease' ? 'current' : ''} onClick={setTab.bind(this, "pressrelease")}>プレスリリース</li>
+            <li className={currentTab === 'info' ? 'current' : ''} onClick={setTab.bind(this, "info")}>お知らせ</li>
+            <li className={currentTab === 'media' ? 'current' : ''} onClick={setTab.bind(this, "media")}>メディア</li>
           </ul>
-          <div className="news-list">
-            <article className="news-article sc-f">
-              <div className="news-txt">
-                <time datetime="2021-03-25">2021年3月25日</time>
-                <h1 className="news-ttl"><a href="#">テレビ朝日のWebニュース専門チャンネル「Abemaヒルズ」にZENKIGENが紹介されました。</a></h1>
-              </div>
-              <div className="news-img">
-                <img src="assets/img/440px-ABEMAHIRUZU.jpg" alt="" />
-              </div>
-            </article>
-            <article className="news-article sc-f">
-              <div className="news-txt">
-                <time datetime="2021-03-25">2021年3月25日</time>
-                <h1 className="news-ttl"><a href="#">WEB面接サービス「harutaka（ハルタカ）」、ITトレンド年間ランキングで2年連続１位を獲得！</a></h1>
-              </div>
-              <div className="news-img">
-                <img src="assets/img/440px-ABEMAHIRUZU.jpg" alt="" />
-              </div>
-            </article>
-            <article className="news-article sc-f">
-              <div className="news-txt">
-                <time datetime="2021-03-25">2021年3月25日</time>
-                <h1 className="news-ttl"><a href="#">テレビ朝日のWebニュース専門チャンネル「Abemaヒルズ」にZENKIGENが紹介されました。</a></h1>
-              </div>
-              <div className="news-img">
-                <img src="assets/img/440px-ABEMAHIRUZU.jpg" alt="" />
-              </div>
-            </article>
-          </div>
+          {postElm(currentTab)}
           <div className="wrap-btn sc-f">
-            <a href="https://harutaka.jp/entry-finder" target="_blank">
+            <Link to='/news'>
               <div className="btn-s">
                 <span className="btn-txt">View more</span>
-                <span className="btn-ar"><img src="/images/ar_next_white_s.svg" alt="" /></span>
+                <span className="btn-ar"><StaticImage src="/images/ar_next_white_s.svg" alt="" /></span>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -147,7 +149,7 @@ export default () => {
                 <a href="https://harutaka.jp" target="_blank">
                   <div className="btn-s">
                     <span className="btn-txt">View more</span>
-                    <span className="btn-ar"><img src="/images/ar_link_white.svg" alt="" /></span>
+                    <span className="btn-ar"><StaticImage src="/images/ar_link_white.svg" alt="" /></span>
                   </div>
                 </a>
               </div>
@@ -171,7 +173,7 @@ export default () => {
                 <a href="https://harutaka.jp/entry-finder/" target="_blank">
                   <div className="btn-s">
                     <span className="btn-txt">View more</span>
-                    <span className="btn-ar"><img src="/images/ar_link_white.svg" alt="" /></span>
+                    <span className="btn-ar"><StaticImage src="/images/ar_link_white.svg" alt="" /></span>
                   </div>
                 </a>
               </div>
@@ -208,7 +210,7 @@ export default () => {
                 <div className="btn-s">
                   <span className="btn-txt">View more</span>
                   <span className="btn-ar">
-                    <img src="/images/ar_next_white_s.svg" alt="" /></span>
+                    <StaticImage src="/images/ar_next_white_s.svg" alt="" /></span>
                 </div>
               </a>
             </div>
