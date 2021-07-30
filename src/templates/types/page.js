@@ -1,7 +1,7 @@
 import React, { useState, useEffect, seEffect } from "react"
 import { graphql } from "gatsby"
 import { Helmet } from "react-helmet";
-import Meta from '../../components/meta'
+import Meta from '../../components/Meta'
 import { Layout } from "../../components/layout"
 import Fadein from '../../utils/Fadein'
 import SpanWrap from '../../utils/SpanWrap'

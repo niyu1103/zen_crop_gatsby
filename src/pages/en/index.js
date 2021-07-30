@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react"
 import { Link } from "gatsby"
-import Meta from '../../components/meta'
+import Meta from '../../components/Meta'
 import { Layout } from "../../components/layout"
 import { StaticImage } from "gatsby-plugin-image"
 import Fadein from '../../utils/Fadein'
