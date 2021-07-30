@@ -225,6 +225,7 @@
 		font-size: 2rem;
 		height: 46px;
 		line-height: 2.4;
+		margin: 0 5px;
 		text-align: center;
 		text-decoration: none;
 		transition: $transition-slow;
@@ -235,6 +236,11 @@
 			color: $black;
 			text-decoration: none;
 		}
+	}
+	.dots {
+		display: inline-block;
+		height: 46px;
+		width: 46px;
 	}
 	.pre-post {
 		background: url(/images/ar_back_black_s.svg) center center no-repeat;

@@ -4,7 +4,7 @@ import Meta from '../../components/meta'
 import { Layout } from "../../components/layout"
 import { StaticImage } from "gatsby-plugin-image"
 import Fadein from '../../utils/Fadein'
-import FadeinScroll from '../utils/FadeinScroll'
+import FadeinScroll from '../../utils/FadeinScroll'
 import SpanWrap from '../../utils/SpanWrap'
 import Slider from '../../utils/Slider'
 import { isIE } from 'react-device-detect';

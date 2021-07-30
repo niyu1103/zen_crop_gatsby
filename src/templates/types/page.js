@@ -9,7 +9,7 @@ import WebGl from '../../components/webgl/webgl';
 import { initScript } from '../../utils/GoogleMap';
 import { getWindow } from 'ssr-window';
 
-const Page = ({ data }) => {
+const window = getWindow();
 
 const Page = ({ data }) => {
   useEffect(() => {
@@ -33,7 +33,7 @@ const Page = ({ data }) => {
           <script>{initScript}</script>
           <script
             type="text/javascript"
-            src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB87ujqnQ1I1IlPVrZ71hS_N64SbjjlxZM&callback=initMap"
             async defe
           >
           </script>

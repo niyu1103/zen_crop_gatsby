@@ -13,11 +13,22 @@ import Fadein from '../utils/Fadein'
 
 
 const Archive = (props) => {
-  console.log(props);
+  console.log(props.uri);
 
-  const [newsCurrentTab, setNewsCurrentTab] = useState('all');
-  const setTab = (newsCurrentTab, e) => {
-    setNewsCurrentTab(newsCurrentTab);
+
+  // const [newsCurrentTab, setNewsCurrentTab] = useState('all');
+  // const setTab = (newsCurrentTab, e) => {
+  //   setNewsCurrentTab(newsCurrentTab);
+  // }
+  let newsCurrentTab = '';
+  if (props.uri.indexOf('info') > -1){
+    newsCurrentTab = 'info'
+  } else if (props.uri.indexOf('pressrelease') > -1){
+    newsCurrentTab = 'pressrelease'
+  } else if (props.uri.indexOf('media') > -1) {
+    newsCurrentTab = 'media'
+  } else{
+    newsCurrentTab = 'all'
   }
 
   useEffect(() => {
@@ -25,9 +36,7 @@ const Archive = (props) => {
   }, [])
 
   const {
-    data: {
-      allWpPost: { nodes, pageInfo },
-    },
+    data: { allWpPost: { nodes, pageInfo },},
     pageContext: { archiveType, archivePath, uri },
   } = props
 
@@ -46,10 +55,10 @@ const Archive = (props) => {
         </div>
         <div className="content-container">
           <ul className="news-nav sc-f">
-            <li className={newsCurrentTab === 'all' ? 'current' : ''} onClick={setTab.bind(this, "all")}>すべて</li>
-            <li className={newsCurrentTab === 'pressrelease' ? 'current' : ''} onClick={setTab.bind(this, "pressrelease")}>プレスリリース</li>
-            <li className={newsCurrentTab === 'info' ? 'current' : ''} onClick={setTab.bind(this, "info")}>お知らせ</li>
-            <li className={newsCurrentTab === 'media' ? 'current' : ''} onClick={setTab.bind(this, "media")}>メディア</li>
+            <li className={newsCurrentTab === 'all' ? 'current' : ''}><Link to="/news">すべて</Link></li>
+            <li className={newsCurrentTab === 'pressrelease' ? 'current' : ''}><Link to="/news/category/pressrelease/">プレスリリース</Link></li>
+            <li className={newsCurrentTab === 'info' ? 'current' : ''}><Link to="/news/category/info/">お知らせ</Link></li>
+            <li className={newsCurrentTab === 'media' ? 'current' : ''}><Link to="/news/category/media/">メディア</Link></li>
           </ul>
 
           {/* {postElm(newsCurrentTab)} */}

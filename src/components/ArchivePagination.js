@@ -13,20 +13,8 @@ const renderPreviousLink = ({ hasPreviousPage, currentPage, archivePath }) => {
   if (hasPreviousPage) {
     return (
       <Link className={"prev page-numbers"} to={previousLink}>
-        <span aria-hidden="true">←</span>
-        <span className="nav-prev-text">
-          Newer <span className="nav-short">Posts</span>
-        </span>
+        <span className="pre-post pagenation">«</span>
       </Link>
-    )
-  } else {
-    return (
-      <span className={"prev page-numbers placeholder"} aria-hidden="true">
-        <span aria-hidden="true">←</span>
-        <span className="nav-prev-text">
-          Newer <span className="nav-short">Posts</span>
-        </span>
-      </span>
     )
   }
 }
@@ -38,20 +26,8 @@ const renderNextLink = ({ hasNextPage, currentPage, archivePath }) => {
         className={"next page-numbers"}
         to={`${archivePath}/page/${currentPage + 1}`}
       >
-        <span className="nav-next-text">
-          Older <span className="nav-short">Posts</span>
-        </span>
-        {"->"}
+        <span className="next-post pagenation">»</span>
       </Link>
-    )
-  } else {
-    return (
-      <span className={"next page-numbers placeholder"} aria-hidden="true">
-        <span className="nav-next-text">
-          Older <span className="nav-short">Posts</span>
-        </span>
-        {"->"}
-      </span>
     )
   }
 }
@@ -62,16 +38,17 @@ const renderPagesInBetween = ({ currentPage, pageCount, archivePath }) => {
       return {
         tag: "span",
         children: page,
-        className: "page-numbers",
+        className: "current pagenation",
       }
     }
 
-    const to = isFirst ? archivePath : `${archivePath}page/${page}`
+    const to = isFirst ? archivePath : `${archivePath}/page/${page}`
 
     return {
       tag: Link,
       children: page,
       to: to,
+      className: "page pagenation",
     }
   }
 

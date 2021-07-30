@@ -5,6 +5,7 @@ process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 
 const createContentTypes = require(`./create/createContentTypes`)
 const createBlog = require(`./create/createBlog`)
+const createCategories = require(`./create/createCategories`)
 
 const getTemplates = () => {
   const sitePath = path.resolve(`./`)
@@ -28,5 +29,6 @@ exports.createPages = async (props) => {
 
   await createContentTypes(props, { templates })
   await createBlog(props, { perPage, blogURI })
+  await createCategories(props, { perPage })
 
 }

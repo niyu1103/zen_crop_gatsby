@@ -621,6 +621,7 @@ section {
   font-size: 2rem;
   height: 46px;
   line-height: 2.4;
+  margin: 0 5px;
   text-align: center;
   text-decoration: none;
   -webkit-transition: all 1s 0.1s cubic-bezier(0.19, 1, 0.22, 1);
@@ -632,6 +633,12 @@ section {
   border: 1px solid black;
   color: black;
   text-decoration: none;
+}
+
+.wrap-pagenation .dots {
+  display: inline-block;
+  height: 46px;
+  width: 46px;
 }
 
 .wrap-pagenation .pre-post {
@@ -5286,41 +5293,45 @@ footer #page-top.show {
 }
 
 .sec-news .content-container .news-nav {
-  font-size: 1.8rem;
-  overflow: hidden;
-  margin: 0 0 16px;
   border-bottom: 1px solid #484848;
+  font-size: 1.8rem;
+  margin: 0 0 16px;
+  overflow: hidden;
 }
 
 .sec-news .content-container .news-nav li {
+  color: #484848;
+  cursor: pointer;
   float: left;
   margin-right: 2rem;
   padding: 8px 16px 4px;
-  cursor: pointer;
-  color: #484848;
 }
 
 .sec-news .content-container .news-nav li:hover {
-  color: black;
   border-bottom: 2px black solid;
+  color: black;
+}
+
+.sec-news .content-container .news-nav li a {
+  text-decoration: none;
 }
 
 .sec-news .content-container .news-nav li.current {
-  color: black;
   border-bottom: 2px black solid;
+  color: black;
 }
 
 .sec-news .content-container .news-list .news-article {
-  width: 100%;
+  border-bottom: 1px solid #9a9a9a;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   margin: 16px 0;
   padding: 16px 0;
   position: relative;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  border-bottom: 1px solid #9a9a9a;
+  width: 100%;
 }
 
 .sec-news .content-container .news-list .news-article .news-txt {
@@ -5328,10 +5339,10 @@ footer #page-top.show {
 }
 
 .sec-news .content-container .news-list .news-article .news-txt time {
-  font-size: 1.6rem;
   color: #484848;
-  padding-bottom: 8px;
   display: block;
+  font-size: 1.6rem;
+  padding-bottom: 8px;
 }
 
 .sec-news .content-container .news-list .news-article .news-txt .news-ttl {
@@ -5339,9 +5350,9 @@ footer #page-top.show {
 }
 
 .sec-news .content-container .news-list .news-article .news-txt .news-ttl a {
+  color: black;
   font-size: 1.6rem;
   text-decoration: none;
-  color: black;
 }
 
 .sec-news .content-container .news-list .news-article .news-txt .news-ttl a:hover {
@@ -5349,26 +5360,26 @@ footer #page-top.show {
 }
 
 .sec-news .content-container .news-list .news-article .news-txt .news-tag a {
-  padding: 8px 8px 8px 24px;
-  border-radius: 4px;
   background-color: #eaeaea;
+  border-radius: 4px;
   color: black;
-  position: relative;
   font-size: 1.4rem;
+  padding: 8px 8px 8px 24px;
+  position: relative;
 }
 
 .sec-news .content-container .news-list .news-article .news-txt .news-tag a::after {
+  color: #484848;
   content: "#";
   display: block;
-  position: absolute;
   left: 8px;
+  position: absolute;
   top: 4px;
-  color: #484848;
 }
 
 .sec-news .content-container .news-list .news-article .news-txt .news-tag a:hover {
+  opacity: .5;
   text-decoration: none;
-  opacity: 0.5;
 }
 
 .sec-news .content-container .news-list .news-article .news-img {
@@ -5376,8 +5387,8 @@ footer #page-top.show {
 }
 
 .sec-news .content-container .news-list .news-article .news-img img {
-  width: 240px;
   height: auto;
+  width: 240px;
 }
 
 .sec-news .wrap-btn {
@@ -5394,14 +5405,14 @@ footer #page-top.show {
     width: 100%;
   }
   .sec-news .content-container {
-    width: 100%;
     padding: 0 16px;
+    width: 100%;
   }
   .sec-news .content-container .news-nav {
-    width: 100%;
     font-size: 1.3rem;
-    overflow: hidden;
     margin: 0 0 16px;
+    overflow: hidden;
+    width: 100%;
   }
   .sec-news .content-container .news-nav li {
     float: left;
@@ -5409,10 +5420,10 @@ footer #page-top.show {
     padding: 8px 8px 4px;
   }
   .sec-news .content-container .news-list .news-article {
-    width: 100%;
     display: block;
     margin: 16px 0;
     padding: 16px 0;
+    width: 100%;
   }
   .sec-news .content-container .news-list .news-article .news-txt {
     width: 100%;
@@ -5424,9 +5435,9 @@ footer #page-top.show {
     margin-bottom: 20px;
   }
   .sec-news .content-container .news-list .news-article .news-txt .news-ttl a {
+    color: black;
     font-size: 1.4rem;
     text-decoration: none;
-    color: black;
   }
   .sec-news .content-container .news-list .news-article .news-txt .news-ttl a:hover {
     text-decoration: underline;
@@ -5435,8 +5446,8 @@ footer #page-top.show {
     width: 160px;
   }
   .sec-news .content-container .news-list .news-article .news-img img {
-    width: 160px;
     height: auto;
+    width: 160px;
   }
   .sec-news .wrap-btn {
     margin-top: 24px;
@@ -5448,21 +5459,21 @@ footer #page-top.show {
  * News Post
  */
 .news-post {
-  width: 100%;
   padding: 64px 0 0;
+  width: 100%;
 }
 
 .news-post .wrap-post-ttl {
-  text-align: left;
-  width: 1152px;
   margin: 0 auto 16px;
   padding: 0 16px 16px;
   position: relative;
+  text-align: left;
+  width: 1152px;
 }
 
 .news-post .wrap-post-ttl .post-ttl-category {
-  font-size: 2.4rem;
   color: #484848;
+  font-size: 2.4rem;
   line-height: 1.8;
   margin-bottom: 8px;
 }
@@ -5471,14 +5482,14 @@ footer #page-top.show {
   font-family: 游ゴシック, "Yu Gothic", YuGothic, "Hiragino Sans", ヒラギノ角ゴシック, "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W1", "Hiragino Kaku Gothic ProN W1", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, sans-serif;
   font-size: 3.6rem;
   font-weight: 400;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  letter-spacing: -.05rem;
   line-height: 1.4;
-  letter-spacing: -0.05rem;
   margin: 0 0 8px 0;
   margin-bottom: 16px;
-  text-transform: uppercase;
   text-indent: -4px;
+  text-transform: uppercase;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
 }
 
 .news-post .wrap-post-ttl .post-time {
@@ -5488,16 +5499,16 @@ footer #page-top.show {
 }
 
 .news-post .wrap-post {
-  width: 100%;
   background-color: #eaeaea;
   padding: 32px 0 64px;
+  width: 100%;
 }
 
 .news-post .wrap-post .content-container {
-  width: 1152px;
+  background-color: #fcffff;
   margin: 0 auto 0;
   padding: 64px 64px;
-  background-color: #fcffff;
+  width: 1152px;
 }
 
 .news-post .wrap-post .content-container .post-container h2 {
@@ -5508,14 +5519,14 @@ footer #page-top.show {
 }
 
 .news-post .wrap-post .content-container .post-container h2:before {
-  content: "";
-  width: 70px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
   border-top: 1px solid black;
+  bottom: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  content: "";
+  left: 0;
+  position: absolute;
+  width: 70px;
 }
 
 .news-post .wrap-post .content-container .post-container h3 {
@@ -5526,15 +5537,15 @@ footer #page-top.show {
 }
 
 .news-post .wrap-post .content-container .post-container h3:before {
-  content: "";
-  width: 18px;
-  height: 18px;
-  position: absolute;
   background-color: black;
-  left: 0;
-  top: 4px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  content: "";
+  height: 18px;
+  left: 0;
+  position: absolute;
+  top: 4px;
+  width: 18px;
 }
 
 .news-post .wrap-post .content-container .post-container p {
@@ -5543,8 +5554,8 @@ footer #page-top.show {
 }
 
 .news-post .wrap-post .content-container .post-container a {
-  text-decoration: underline;
   color: black;
+  text-decoration: underline;
 }
 
 .news-post .wrap-post .content-container .post-container a:hover {
@@ -5552,28 +5563,28 @@ footer #page-top.show {
 }
 
 .news-post .wrap-post .content-container .news-nav {
-  font-size: 1.8rem;
-  overflow: hidden;
-  margin: 0 0 16px;
   border-bottom: 1px solid #484848;
+  font-size: 1.8rem;
+  margin: 0 0 16px;
+  overflow: hidden;
 }
 
 .news-post .wrap-post .content-container .news-nav li {
+  color: #484848;
+  cursor: pointer;
   float: left;
   margin-right: 2rem;
   padding: 8px 16px 4px;
-  cursor: pointer;
-  color: #484848;
 }
 
 .news-post .wrap-post .content-container .news-nav li:hover {
-  color: black;
   border-bottom: 2px black solid;
+  color: black;
 }
 
 .news-post .wrap-post .content-container .news-nav li.current {
-  color: black;
   border-bottom: 2px black solid;
+  color: black;
 }
 
 .news-post .wrap-post .wrap-btn {
