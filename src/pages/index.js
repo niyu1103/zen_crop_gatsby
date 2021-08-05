@@ -20,7 +20,7 @@ export default () => {
   const [loaded, onLoad] = useState(false);
   const [currentTab, setCurrentTab] = useState('all');
   const glElement = useRef(null);
-  const setTab = (currentTab,e) => {
+  const setTab = (currentTab, e) => {
     setCurrentTab(currentTab);
   }
 
@@ -46,21 +46,21 @@ export default () => {
 
   const postElm = (currentTab) => {
 
-    if (currentTab === 'all'){
+    if (currentTab === 'all') {
       return (
         <HomePostAll />
       )
-    } else if (currentTab === 'pressrelease'){
+    } else if (currentTab === 'pressrelease') {
       return (
-      <HomePostPressrelease />
+        <HomePostPressrelease />
       )
     } else if (currentTab === 'info') {
       return (
-      <HomePostInfo />
+        <HomePostInfo />
       )
     } else if (currentTab === 'media') {
       return (
-      <HomePostMedia />
+        <HomePostMedia />
       )
     }
   }
@@ -105,7 +105,7 @@ export default () => {
         </div>
         <div className="content-container">
           <ul className="news-nav sc-f">
-            <li className={currentTab === 'all'  ? 'current' : ''} onClick={setTab.bind(this, "all")}>すべて</li>
+            <li className={currentTab === 'all' ? 'current' : ''} onClick={setTab.bind(this, "all")}>すべて</li>
             <li className={currentTab === 'pressrelease' ? 'current' : ''} onClick={setTab.bind(this, "pressrelease")}>プレスリリース</li>
             <li className={currentTab === 'info' ? 'current' : ''} onClick={setTab.bind(this, "info")}>お知らせ</li>
             <li className={currentTab === 'media' ? 'current' : ''} onClick={setTab.bind(this, "media")}>メディア</li>
@@ -121,7 +121,7 @@ export default () => {
           </div>
         </div>
       </section>
-   {/* /#news */}
+      {/* /#news */}
 
       <section id="service" className="sec home-service">
         <div className="area-video sc-f">
@@ -138,7 +138,7 @@ export default () => {
                 <p className="service-copy1">採用DXなら</p>
                 <div className="harutaka-logo">
                   <StaticImage src="../images/harutaka_logo.svg" alt="" />
-                  </div>
+                </div>
                 <p className="service-name-jp">ハルタカ </p>
                 <p className="service-copy2">時間や場所にとらわれない<br />新しい採用の体験を。</p>
                 <p className="service-ex-jp">メンバーが最大限の能力を発揮できるよう、<br />
@@ -146,9 +146,9 @@ export default () => {
               </div>
               <div className="harutaka-img">
                 <StaticImage src="../images/harutaka_image.png" alt="harutaka image" />
-               </div>
+              </div>
               <div className="wrap-btn">
-                <a href="https://harutaka.jp" target="_blank">
+                <a href="https://harutaka.jp" target="_blank" rel="noopener">
                   <div className="btn-s">
                     <span className="btn-txt">View more</span>
                     <span className="btn-ar"><StaticImage src="/images/ar_link_white.svg" alt="" /></span>
@@ -163,16 +163,16 @@ export default () => {
                 <p className="service-copy1">選考をAIの分析でアシスト</p>
                 <div className="harutaka_ef-logo">
                   <StaticImage src="../images/harutakaEF_logo.svg" alt="harutakaEF logo" />
-                  </div>
+                </div>
                 <p className="service-name-jp">ハルタカ エントリーファインダー</p>
                 <p className="service-copy2">録画動画の選考を<br />AIの分析でアシスト</p>
                 <p className="service-ex-jp">印象を定量化することにより、<br />客観的で公平な選考を実現します。</p>
               </div>
               <div className="harutaka-ef-img">
                 <StaticImage src="../images/ef_image.png" alt="ef image" />
-                </div>
+              </div>
               <div className="wrap-btn">
-                <a href="https://harutaka.jp/entry-finder/" target="_blank">
+                <a href="https://harutaka.jp/entry-finder/" target="_blank" rel="noopener">
                   <div className="btn-s">
                     <span className="btn-txt">View more</span>
                     <span className="btn-ar"><StaticImage src="/images/ar_link_white.svg" alt="" /></span>
@@ -183,7 +183,7 @@ export default () => {
           </div>
         </div>
       </section>
-   {/* /#service */}
+      {/* /#service */}
 
       <div className="aboutus-wrap-sec">
         <canvas ref={glElement} className="webgl sc-f sc-f-on"></canvas>
@@ -208,18 +208,18 @@ export default () => {
           <div className="content-container">
             <p className="aboutus-txt sc-f sc-f-on">ZENKIGENの活動の基本となる<em>Vision</em> / <em>Value</em> / <em>Philosophy</em></p>
             <div className="wrap-btn sc-f">
-              <a href="/aboutus/" target="_blank">
+              <Link to='/aboutus/'>
                 <div className="btn-s">
                   <span className="btn-txt">View more</span>
                   <span className="btn-ar">
                     <StaticImage src="/images/ar_next_white_s.svg" alt="" /></span>
                 </div>
-              </a>
+              </Link>
             </div>
           </div>
         </section>
       </div>
-    {/* /.wrap-sec */}
+      {/* /.wrap-sec */}
 
       <section id="company" className="sec sec-company">
         <div className="wrap-sec-ttl sc-f">
@@ -230,104 +230,104 @@ export default () => {
           <div className="sec-company-list">
             <div className="wrap-area">
               <section className="area-content sc-f">
-                <a href="/company/">
+                <Link to='/company/'>
                   <div className="overlay"></div>
                   <div className="area-img">
                     <StaticImage src="../images/ph_list_company.png" alt="" />
-                    </div>
-                </a>
+                  </div>
+                </Link>
                 <div className="wrap-ttl">
-                  <a href="/company/">
+                  <Link to='/company/'>
                     <h2 className="area-ttl-en">Company Information</h2>
                     <p className="area-ttl-jp">会社概要</p>
-                  </a>
+                  </Link>
                 </div>
               </section>
             </div>
             <div className="wrap-area">
               <section className="area-content sc-f td02">
-                <a href="/company/#ceo-message">
+                <Link to='/company/#ceo-message'>
                   <div className="overlay"></div>
                   <div className="area-img">
                     <StaticImage src="../images/ph_list_nozawa.jpg" alt="nozawa photo" />
-                    </div>
-                </a>
+                  </div>
+                </Link>
                 <div className="wrap-ttl">
-                  <a href="/company/#ceo-message">
+                  <Link to='/company/#ceo-message'>
                     <h2 className="area-ttl-en">CE0 Message</h2>
                     <p className="area-ttl-jp">代表メッセージ</p>
-                  </a>
+                  </Link>
                 </div>
               </section>
             </div>
             <div className="wrap-area">
               <section className="area-content sc-f td04">
-                <a href="/company/#leadership">
+                <Link to='/company/#leadership'>
                   <div className="overlay"></div>
                   <div className="area-img">
                     <StaticImage src="../images/ph_list_leadership.jpg" alt="" />
-                    </div>
-                </a>
+                  </div>
+                </Link>
                 <div className="wrap-ttl">
-                  <a href="/company/#leadership">
+                  <Link to='/company/#leadership'>
                     <h2 className="area-ttl-en">Leadership</h2>
                     <p className="area-ttl-jp">役員紹介</p>
-                  </a>
+                  </Link>
                 </div>
               </section>
             </div>
             <div className="wrap-area">
               <section className="area-content sc-f">
-                <a href="/company/#access">
+                <Link to='/company/#access'>
                   <div className="overlay"></div>
                   <div className="area-img">
                     <StaticImage src="../images/ph_list_map.png" alt="" />
                   </div>
-                </a>
+                </Link>
                 <div className="wrap-ttl">
-                  <a href="/company/#access">
+                  <Link to='/company/#access'>
                     <h2 className="area-ttl-en">Access</h2>
                     <p className="area-ttl-jp">アクセス</p>
-                  </a>
+                  </Link>
                 </div>
               </section>
             </div>
             <div className="wrap-area">
               <section className="area-content sc-f td02">
-                <a href="/company/#workstyle">
+                <Link to='/company/#workstyle'>
                   <div className="overlay"></div>
                   <div className="area-img">
                     <StaticImage src="../images/workstyle06.jpg" alt="" />
                   </div>
-                </a>
+                </Link>
                 <div className="wrap-ttl">
-                  <a href="/company/#workstyle">
+                  <Link to='/company/#workstyle'>
                     <h2 className="area-ttl-en">Work Style</h2>
                     <p className="area-ttl-jp">ワークスタイル</p>
-                  </a>
+                  </Link>
                 </div>
               </section>
             </div>
             <div className="wrap-area">
               <section className="area-content sc-f td04">
-                <a href="/company/#labo">
+                <Link to='/company/#labo'>
                   <div className="overlay"></div>
                   <div className="area-img">
                     <StaticImage src="../images/ph_list_lab.jpg" alt="" />
                   </div>
-                </a>
+                </Link>
                 <div className="wrap-ttl">
-                  <a href="/company/#labo">
+                  <Link to='/company/#labo'>
                     <h2 className="area-ttl-en">Labo</h2>
                     <p className="area-ttl-jp">ラボ</p>
-                  </a>
+                  </Link>
                 </div>
               </section>
             </div>
           </div>
         </div>
       </section>
-   {/* /#company */}
+      {/* /#company */}
 
       <section id="blog" className="sec sec-blog">
         <div className="wrap-sec-ttl sc-f">
@@ -335,10 +335,10 @@ export default () => {
           <p className="sec-ttl-jp sc-f sc-f-on">ZENKIGENのBlogを紹介します</p>
         </div>
         <div className="blog-container sc-f">
-            <Slider />
+          <Slider />
         </div>
       </section>
- {/* /#blog */}
+      {/* /#blog */}
     </Layout>
   )
 }

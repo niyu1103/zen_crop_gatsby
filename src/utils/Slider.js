@@ -12,6 +12,18 @@ export default function SimpleSlider() {
     arrow: true,
     centerMode: true,
     variableWidth: true,
+    responsive: [
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: false,
+          // autoplay: true,
+          variableWidth: false,
+        }
+      },
+    ]
   };
   return (
     <>

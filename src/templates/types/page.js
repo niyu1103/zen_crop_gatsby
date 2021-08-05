@@ -10,8 +10,14 @@ import { initScript } from '../../utils/GoogleMap';
 import { getWindow } from 'ssr-window';
 
 const window = getWindow();
+let pageEnFlag = '';
 
 const Page = ({ data }) => {
+  if (data.wpPage.wpParent){
+    pageEnFlag = 'en'
+  }
+
+  console.log(pageEnFlag);
   useEffect(() => {
     Fadein();
 
@@ -47,7 +53,7 @@ const Page = ({ data }) => {
     <Layout>
       <Meta
         title="株式会社ZENKIGEN"
-        bodyclass={data.wpPage.slug}
+        bodyclass={(data.wpPage.slug)+ ' ' +(pageEnFlag)}
         description="株式会社ZENKIGENは「テクノロジーを通じて人と企業が全機現できる社会の創出に貢献する」社会を目指します"
         ogpImage=""
       />
@@ -67,6 +73,12 @@ export const query = graphql`
       title
       slug
       content
+      wpParent {
+        node {
+          id
+          slug
+        }
+      }
     }
   }
 `

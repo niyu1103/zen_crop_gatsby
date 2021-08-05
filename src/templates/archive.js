@@ -9,6 +9,7 @@ import NewsPostInfo from "../components/NewsPostInfo"
 import NewsPostMedia from "../components/NewsPostMedia"
 import ArchivePagination from "../components/ArchivePagination"
 import Fadein from '../utils/Fadein'
+import moment from "moment"
 
 
 
@@ -68,7 +69,7 @@ const Archive = (props) => {
             {props.data.allWpPost.nodes.map((post, index) => (
               <article class="news-article sc-f" key={index}>
                 <div class="news-txt">
-                  <time datetime={post.date}>{post.date}</time>
+                  <time datetime={post.date}>{moment(post.date).format(`YYYY年MM月DD日`)}</time>
                   <h1 className="news-ttl"> <Link to={`/news/${post.slug}/`}>{post.title}</Link></h1>
                 </div>
                 <div class="news-img">

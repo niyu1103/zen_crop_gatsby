@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import { Layout } from "../../components/layout"
 import Meta from "../../components/Meta"
 import Fadein from '../../utils/Fadein'
+import moment from "moment"
 
 const Post = ({ data }) => {
 
@@ -23,7 +24,7 @@ const Post = ({ data }) => {
           <div className="wrap-post-ttl sc-f show">
             <p className="post-ttl-category">{data.wpPost.categories.nodes[0].name}</p>
             <h1 className="post-ttl">{data.wpPost.title}</h1>
-            <p className="post-time">{data.wpPost.date}</p>
+            <p className="post-time">{moment(data.wpPost.date).format(`YYYY年MM月DD日`)}</p>
           </div>
           <div className="wrap-post">
             <div className="content-container">

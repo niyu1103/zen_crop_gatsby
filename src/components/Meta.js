@@ -1,7 +1,15 @@
 import React from "react"
 import { Helmet } from "react-helmet"
+import { getWindow } from 'ssr-window';
 
+const window = getWindow();
 export default props => {
+  let lang = '';
+  if (window.location.pathname.indexOf('/en') > -1) {
+      lang = 'en'
+  } else{
+      lang = 'ja'
+  }
   const baseTitle = "株式会社ZENKIGEN"
   const title = props.title ? `${props.title} | ${baseTitle}` : baseTitle
   const bodyClass = props.bodyclass
@@ -9,7 +17,7 @@ export default props => {
   const ogpImage = props.ogpImage
   return (
     <Helmet>
-      <html lang="ja" />
+      <html lang={lang} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />

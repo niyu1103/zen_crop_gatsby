@@ -42,7 +42,7 @@ export default () => {
     <Layout>
       <Meta
         title="株式会社ZENKIGEN"
-        bodyclass={isIE ? 'home ie' : 'home'}
+        bodyclass={isIE ? 'home en ie' : 'home en'}
         description="株式会社ZENKIGENは「テクノロジーを通じて人と企業が全機現できる社会の創出に貢献する」社会を目指します"
         ogpImage=""
       />
@@ -79,7 +79,7 @@ export default () => {
 
       <section id="service" className="sec home-service">
         <div className="area-video sc-f">
-          <canvas ref={glElement} className="particle sc-f sc-f-on"></canvas>
+          <canvas className="particle sc-f sc-f-on"></canvas>
         </div>
         <div className="wrap-sec-ttl sc-f">
           <h2 className="sec-ttl-en">Service</h2>
@@ -132,7 +132,7 @@ export default () => {
       {/* /#service  */}
 
       <div className="aboutus-wrap-sec">
-        <canvas className="webgl sc-f sc-f-on"></canvas>
+        <canvas ref={glElement} className="webgl sc-f sc-f-on"></canvas>
         <div className="points">
           <div className="wrap-points">
             <div className="point point-0 sc-f sc-f-on">
@@ -154,12 +154,12 @@ export default () => {
           <div className="content-container">
             <p className="aboutus-txt sc-f sc-f-on">ZENKIGENの活動の基本となる<em>Vision</em> / <em>Value</em> / <em>Philosophy</em></p>
             <div className="wrap-btn sc-f">
-              <a href="/aboutus/" target="_blank" rel="noopener">
+              <Link to='/en/aboutus/'>
                 <div className="btn-s">
                   <span className="btn-txt">View more</span>
                   <span className="btn-ar"><StaticImage src="https://portal2021.zenkigen.co.jp/wp-content/uploads/2021/07/ar_next_white_s.svg" alt="" /></span>
                 </div>
-              </a>
+              </Link>
             </div>
           </div>
         </section>
@@ -175,43 +175,43 @@ export default () => {
           <div className="sec-company-list">
             <div className="wrap-area">
               <section className="area-content sc-f">
-                <a href="/company/">
+                <Link to='/en/company/'>
                   <div className="overlay"></div>
                   <div className="area-img"><StaticImage src="https://portal2021.zenkigen.co.jp/wp-content/uploads/2021/07/ph_list_company.png" alt="" /></div>
-                </a>
+                </Link>
                 <div className="wrap-ttl">
-                  <a href="/company/">
+                  <Link to='/en/company/'>
                     <h2 className="area-ttl-en">Company Information</h2>
                     <p className="area-ttl-jp">会社概要</p>
-                  </a>
+                  </Link>
                 </div>
               </section>
             </div>
             <div className="wrap-area">
               <section className="area-content sc-f td02">
-                <a href="/company/#ceo-message">
+                <Link to='/en/company/#ceo-message'>
                   <div className="overlay"></div>
                   <div className="area-img"><StaticImage src="https://portal2021.zenkigen.co.jp/wp-content/uploads/2021/07/ph_list_nozawa.jpg" alt="" /></div>
-                </a>
+                </Link>
                 <div className="wrap-ttl">
-                  <a href="/company/#ceo-message">
+                  <Link to='/en/company/#ceo-message'>
                     <h2 className="area-ttl-en">CE0 Message</h2>
                     <p className="area-ttl-jp">代表メッセージ</p>
-                  </a>
+                  </Link>
                 </div>
               </section>
             </div>
             <div className="wrap-area">
               <section className="area-content sc-f td04">
-                <a href="/company/#leadership">
+                <Link to='/en/company/#leadership'>
                   <div className="overlay"></div>
                   <div className="area-img"><StaticImage src="https://portal2021.zenkigen.co.jp/wp-content/uploads/2021/07/ph_list_leadership.jpg" alt="" /></div>
-                </a>
+                </Link>
                 <div className="wrap-ttl">
-                  <a href="/company/#leadership">
+                  <Link to='/en/company/#leadership'>
                     <h2 className="area-ttl-en">Leadership</h2>
                     <p className="area-ttl-jp">役員紹介</p>
-                  </a>
+                  </Link>
                 </div>
               </section>
             </div>
@@ -219,43 +219,43 @@ export default () => {
           <div className="sec-company-list">
             <div className="wrap-area">
               <section className="area-content sc-f">
-                <a href="/company/#access">
+                <Link to='/en/company/#access'>
                   <div className="overlay"></div>
                   <div className="area-img"><StaticImage src="https://portal2021.zenkigen.co.jp/wp-content/uploads/2021/07/ph_list_map.jpg" alt="" /></div>
-                </a>
+                </Link>
                 <div className="wrap-ttl">
-                  <a href="/company/#access">
+                  <Link to='/en/company/#access'>
                     <h2 className="area-ttl-en">Access</h2>
                     <p className="area-ttl-jp">アクセス</p>
-                  </a>
+                  </Link>
                 </div>
               </section>
             </div>
             <div className="wrap-area">
               <section className="area-content sc-f td02">
-                <a href="/company/#workstyle">
+                <Link to='/en/company/#workstyle'>
                   <div className="overlay"></div>
                   <div className="area-img"><StaticImage src="https://portal2021.zenkigen.co.jp/wp-content/uploads/2021/07/workstyle06.jpg" alt="" /></div>
-                </a>
+                </Link>
                 <div className="wrap-ttl">
-                  <a href="/company/#workstyle">
+                  <Link to='/en/company/#workstyle'>
                     <h2 className="area-ttl-en">Work Style</h2>
                     <p className="area-ttl-jp">ワークスタイル</p>
-                  </a>
+                  </Link>
                 </div>
               </section>
             </div>
             <div className="wrap-area">
               <section className="area-content sc-f td04">
-                <a href="/company/#labo">
+                <Link to='/en/company/#labo'>
                   <div className="overlay"></div>
                   <div className="area-img"><StaticImage src="https://portal2021.zenkigen.co.jp/wp-content/uploads/2021/07/ph_list_lab.jpg" alt="" /></div>
-                </a>
+                </Link>
                 <div className="wrap-ttl">
-                  <a href="/company/#labo">
+                  <Link to='/en/company/#labo'>
                     <h2 className="area-ttl-en">Labo</h2>
                     <p className="area-ttl-jp">ラボ</p>
-                  </a>
+                  </Link>
                 </div>
               </section>
             </div>

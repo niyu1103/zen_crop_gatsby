@@ -250,7 +250,33 @@
 					// }
 				}
 			}
+			.slick-current {
+				margin: 0;
+			}
 
+
+			.slick-slide {
+				width: 100%;
+			}
+
+			.slick-list {
+				height: auto;
+				padding: 0 !important;
+			}
+
+			.slick-prev {
+				left: -16px;
+				margin-left: 0;
+				position: absolute;
+				top: 140px;
+			}
+
+			.slick-next {
+				margin-right: 0;
+				position: absolute;
+				right: -16px;
+				top: 140px;
+			}
 			.pagenation {
 				// width: 46px;
 				// height: 46px;
