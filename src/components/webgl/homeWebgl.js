@@ -28,6 +28,7 @@ export default class HomeWebGl {
     this.addDirectionalLight(0xffffff, { x: 25, y: 0, z: 25 });
     this.addDirectionalLight(0xffffff, { x: 0, y: 70, z: 0 });
     this.addDirectionalLight(0xffffff, { x: -25, y: -50, z: -25 });
+    this.addEvent();
     this.tick();
   }
 
@@ -81,6 +82,20 @@ export default class HomeWebGl {
 
   update() {
     this.triangular.update();
+  }
+
+  addEvent() {
+    window.addEventListener('resize', this.onResize.bind(this));
+  }
+
+  onResize() {
+    this.sizes.width = window.innerWidth;
+    this.camera.resize(this.sizes.width, this.sizes.height);
+
+    if (this.renderer) {
+      this.renderer.setSize(this.sizes.width, this.sizes.height);
+      this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    }
   }
 
   tick() {
