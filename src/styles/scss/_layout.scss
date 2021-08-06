@@ -3,80 +3,72 @@
  * Common Style
  */
 
-div,
-header,
-footer,
-nav,
-main,
-section,
-ul,
-dl,
-p {
-  width: 100%;
-  box-sizing: border-box;
+div, header, footer, nav, main, section, ul, dl, p {
+	box-sizing: border-box;
+	width: 100%;
 }
 
-li,
-ol,
-ul {
-  list-style: none;
+li, ol, ul {
+	list-style: none;
 }
 
-dd,
-dl,
-dt {
-  margin: 0;
-  padding: 0;
+dd, dl, dt {
+	margin: 0;
+	padding: 0;
 }
 
-table,
-tr,
-td,
-th {
-  box-sizing: border-box;
+table, tr, td, th {
+	box-sizing: border-box;
 }
 
 p {
-  overflow-wrap: break-word;
-  word-wrap: break-word;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
 }
 
 section {
-  position: relative;
+	position: relative;
 }
 
 .content-container {
-  width: $container-width;
-  margin: 0 auto;
-  padding: 0;
-  position: relative;
+	margin: 0 auto;
+	padding: 0;
+	position: relative;
+	width: $container-width;
 }
+// IE11
+.ie {
+	.content-container {
+		width: 1152px;
+	}
+}
+
 // Tablet
 @media (max-width: 1024px) {
-  .content-container {
-    width: 100%;
-    padding: 0 16px;
-    margin: 64px 0;
-  }
+	.content-container {
+		margin: 64px 0;
+		padding: 0 16px;
+		width: 100%;
+	}
 }
 
 // SP
 @media (max-width: 767px) {
-  .content-container {
-    width: 100%;
-    padding: 0 16px;
-    margin: 64px 0;
-  }
+	.content-container {
+		margin: 64px 0;
+		padding: 0 16px;
+		width: 100%;
+	}
 }
 
 .txc {
-  text-align: center;
+	text-align: center;
 }
 
 .txr {
-  text-align: right;
+	text-align: right;
 }
 
 .display-none {
-  display: none;
+	display: none;
 }

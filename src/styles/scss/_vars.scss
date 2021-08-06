@@ -3,9 +3,8 @@
  * Global Variables
  */
 
-$white: rgb(252, 255, 255) !default;
+$white: rgb(255, 255, 255) !default;
 $black: rgb(0, 0, 0) !default;
-// $primary: #D7FE06 !default;
 $secondary-lightgray: #9a9a9a !default; //light gray
 $secondary-gray: #484848 !default; //gray
 $color-red: #ed225d;
@@ -43,12 +42,7 @@ $type-title-jp: 游ゴシック, "Yu Gothic", YuGothic, "Hiragino Sans", ヒラ�
     "ヒラギノ角ゴ ProN W1", "Hiragino Kaku Gothic ProN W1", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka,
     sans-serif;
 $type-title-en: "Akkurat-Bold", sans-serif;
-// $type-title-en: "CircularBold", sans-serif;
-// $type-title-en: neue-haas-grotesk-display, sans-serif;
-// $type-title-en: aktiv-grotesk, sans-serif;
 $type-title2-en: "Akkurat-Regular", sans-serif;
-// $type-title2-en: neue-haas-grotesk-display, sans-serif;
-// $type-title2-en: aktiv-grotesk, sans-serif;
 
 /* Margin */
 $m4: 4px;
@@ -74,12 +68,10 @@ $container-width: 1152px;
 /* Column */
 :root {
     --columnSize: 96px;
-
     // Tablet
     @media (max-width: 1023px) {
         --columnSize: 80px;
     }
-
     // SP
     @media (max-width: 767px) {
         --columnSize: 60px;
@@ -90,18 +82,15 @@ $container-width: 1152px;
 :root {
     --cols: 8;
 
+	--gridSize: calc(calc(100vw - 0px) / var(--cols));
     // Tablet
     @media (max-width: 1023px) {
         --cols: 8;
     }
-
     // SP
     @media (max-width: 767px) {
         --cols: 4;
     }
-
-    // --totalGrid: calc(100vw);
-    --gridSize: calc(calc(100vw - 0px) / var(--cols));
 }
 
 /* IE for Gird */

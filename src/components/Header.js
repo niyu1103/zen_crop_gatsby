@@ -53,7 +53,7 @@ export default () => {
             </div>
             <div className="drawer-container-bottom">
               <section className={isActive ? 'drawer-nav-news show' : 'drawer-nav-news'}>
-                <h4 className="drawer-ttl"><Link to="/en/news/" onClick={onNavToggle}>News</Link></h4>
+                <h4 className="drawer-ttl"><Link to="/news/" onClick={onNavToggle}>News</Link></h4>
               </section>
               <section className={isActive ? 'drawer-nav-blog show' : 'drawer-nav-blog'}>
                 <h4 className="drawer-ttl"><Link to="/en/#blog" onClick={onNavToggle}>Blog</Link></h4>

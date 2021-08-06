@@ -7,8 +7,8 @@
 	min-height: 640px;
 	padding: 72px 0 96px;
 	position: relative;
-
 	.area-video {
+		background-color: #072534;
 		height: 640px;
 		left: 0;
 		overflow: hidden;
@@ -25,19 +25,15 @@
 			width: 100%;
 			z-index: 3;
 		}
-		//
 		.particle {
 			height: 640px;
 			left: 0;
-			// aspect-ratio: 16 / 9;
 			object-fit: cover;
 			position: absolute;
 			top: 0;
 			width: 100%;
-			// z-index: 13;
 		}
 	}
-
 	.wrap-sec-ttl {
 		color: $white;
 		margin: 0 auto 64px;
@@ -47,10 +43,9 @@
 		&:before {
 			border-top: 1px solid $white;
 			left: 50%;
-			margin-left: -35px;
+			transform: translateX(-50%);
 		}
 	}
-
 	.content-container {
 		display: flex;
 		padding: 0 var(--columnSize);
@@ -65,7 +60,6 @@
 				transform: translateY(0);
 				transition: $transition-slow;
 				width: 100%;
-
 				.service-txt {
 					color: $black;
 					padding: 24px;
@@ -113,7 +107,7 @@
 				}
 			}
 		}
-
+		// area harutaka
 		.area-harutaka {
 			background: linear-gradient(0deg, #e4f2ff 28.51%, rgba(255, 255, 255, 0) 70.28%);
 			.service-txt {
@@ -137,11 +131,7 @@
 				}
 			}
 		}
-
-		/* ------------------------------------------------------ */
-		/**
-    * area harutaka-ef
-    */
+		//  area harutaka-ef
 		.area-harutaka-ef {
 			background-image: url(/images/bg_ef.png),
 			linear-gradient(
@@ -176,110 +166,98 @@
 	}
 }
 
-// Tablet
-@media (max-width: 1024px) {
+//IE11
+.ie {
+	.home-service {
+		.wrap-sec-ttl {
+			width: 384px;
+		}
+		.content-container {
+			padding: 0 96px;
+			.area-service {
+				width: 480px;
+			}
+			// area harutaka
+			.area-harutaka {
+				.harutaka-img {
+					img {
+						height: auto;
+						width: 288px;
+					}
+				}
+			}
+			// area harutaka-ef
+			.area-harutaka-ef {
+				.harutaka-ef-img {
+					img {
+						height: auto;
+						width: 288px;
+					}
+				}
+			}
+		}
+	}
 }
 
-// SP
-@media (max-width: 767px) {
+// Tablet
+@media (max-width: 1024px) {
 	.home-service {
-		min-height: 320px;
+		min-height: 640px;
 		padding: 40px 0 96px;
 		position: relative;
-
 		.area-video {
-			height: 320px;
+			height: 640px;
 			left: 0;
 			overflow: hidden;
 			position: absolute;
 			top: 0;
 			width: 100%;
 			z-index: -100;
-			.overlay {
-				// width: 100%;
-				// height: 100%;
-				// background-color: rgba(0, 0, 0, 0.4);
-				// position: absolute;
-				// left: 0;
-				// top: 0;
-				// z-index: 3;
-			}
-			//
 			.particle {
-				height: 320px;
+				height: 640px;
 				left: 0;
-				// aspect-ratio: 16 / 9;
 				object-fit: cover;
 				position: absolute;
 				top: 0;
 				width: 100%;
-				// z-index: 13;
 			}
 		}
-
 		.wrap-sec-ttl {
 			margin: 0 0 16px;
 			padding: 0 16px 16px;
 			width: 100%;
-			// color: $white;
-			// &:before {
-			//   border-top: 1px solid $white;
-			//   left: 50%;
-			//   margin-left: -35px;
-			// }
 		}
-
 		.content-container {
 			display: flex;
-			margin: 0 auto;
+			margin: 0 0;
 			padding: 0 8px;
 			width: 100%;
 			.area-service {
-				padding: 0 4px;
+				padding: 0 16px;
 				width: 50%;
 				.area-container {
-					height: 460px;
-					// box-shadow: 0 0 0px rgba(0, 0, 0, 0.1);
-					// transition: $transition-slow;
-					// transform: translateY(0);
+					height: 560px;
 					width: 100%;
-					// position: relative;
-					// background-color: $white;
-
 					.service-txt {
-						padding: 8px;
-						// color: $black;
+						padding: 16px;
 						.service-copy1 {
-							font-size: 1.2rem;
-							letter-spacing: -.02rem;
-							// font-family: $type-title-jp;
-							// font-weight: bold;
-							// line-height: 1.4;
+							font-size: 1.6rem;
+							letter-spacing: 0rem;
 							margin-bottom: 4px;
 						}
 						.service-name-jp {
-							font-size: 1.1rem;
-							letter-spacing: -.08rem;
-							// font-family: $type-title-jp;
-							// font-weight: bold;
-							// line-height: 1.4;
-							// color: $secondary-lightgray;
+							font-size: 1.4rem;
+							letter-spacing: 0rem;
 							margin-bottom: 12px;
 						}
 						.service-copy2 {
-							font-size: 1.3rem;
-							letter-spacing: -.02rem;
-							// font-family: $type-title-jp;
-							// font-weight: bold;
-							// line-height: 1.4;
+							font-size: 1.8rem;
+							letter-spacing: 0rem;
 							margin-bottom: 12px;
 						}
 						.service-ex-jp {
-							font-size: 1.3rem;
-							letter-spacing: -.02rem;
-							// font-family: $type-title-jp;
-							// font-weight: bold;
-							// letter-spacing: 0;
+							font-size: 1.5rem;
+							letter-spacing: 0rem;
 						}
 					}
 					.wrap-btn {
@@ -288,12 +266,12 @@
 						position: absolute;
 						text-align: center;
 						a {
-							padding: 12px 32px 12px 32px;
+							padding: 12px 64px 12px 64px;
 						}
 					}
 				}
 			}
-
+			// area-harutaka
 			.area-harutaka {
 				background: linear-gradient(0deg, #e4f2ff 28.51%, rgba(255, 255, 255, 0) 70.28%);
 				.service-txt {
@@ -318,21 +296,131 @@
 				}
 			}
 
-			/* ------------------------------------------------------ */
-			/**
-    * area harutaka-ef
-    */
+			// area-harutaka-ef
 			.area-harutaka-ef {
-				// background-image: url(/images/bg_ef.png),
-				//   linear-gradient(
-				//     180deg,
-				//     rgba(106, 190, 226, 0.1) 0%,
-				//     rgba(106, 190, 226, 0.23) 50%,
-				//     rgba(106, 190, 226, 0.23) 100%
-				//   );
-				// background-repeat: no-repeat, no-repeat, no-repeat;
-				// background-position: bottom center, left, right;
-				// background-size: cover auto, 100% 100%;
+				.service-txt {
+					.harutaka_ef-logo {
+						img {
+							height: 24px;
+							width: auto;
+						}
+					}
+				}
+				.harutaka-ef-img {
+					left: 0;
+					position: absolute;
+					text-align: center;
+					top: 240px;
+					width: 100%;
+					img {
+						height: auto;
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+}
+
+// SP
+@media (max-width: 767px) {
+	.home-service {
+		min-height: 320px;
+		padding: 40px 0 96px;
+		position: relative;
+		.area-video {
+			height: 320px;
+			left: 0;
+			overflow: hidden;
+			position: absolute;
+			top: 0;
+			width: 100%;
+			z-index: -100;
+			.particle {
+				height: 320px;
+				left: 0;
+				object-fit: cover;
+				position: absolute;
+				top: 0;
+				width: 100%;
+			}
+		}
+		.wrap-sec-ttl {
+			margin: 0 0 16px;
+			padding: 0 16px 16px;
+			width: 100%;
+		}
+		.content-container {
+			display: flex;
+			margin: 0 auto;
+			padding: 0 8px;
+			width: 100%;
+			.area-service {
+				padding: 0 4px;
+				width: 50%;
+				.area-container {
+					height: 460px;
+					width: 100%;
+					.service-txt {
+						padding: 8px;
+						.service-copy1 {
+							font-size: 1.2rem;
+							letter-spacing: -.02rem;
+							margin-bottom: 4px;
+						}
+						.service-name-jp {
+							font-size: 1.1rem;
+							letter-spacing: -.08rem;
+							margin-bottom: 12px;
+						}
+						.service-copy2 {
+							font-size: 1.3rem;
+							letter-spacing: -.02rem;
+							margin-bottom: 12px;
+						}
+						.service-ex-jp {
+							font-size: 1.3rem;
+							letter-spacing: -.02rem;
+						}
+					}
+					.wrap-btn {
+						bottom: 8px;
+						left: 0;
+						position: absolute;
+						text-align: center;
+						a {
+							padding: 12px 32px 12px 32px;
+						}
+					}
+				}
+			}
+			// area-harutaka
+			.area-harutaka {
+				background: linear-gradient(0deg, #e4f2ff 28.51%, rgba(255, 255, 255, 0) 70.28%);
+				.service-txt {
+					.harutaka-logo {
+						img {
+							height: 24px;
+							width: auto;
+						}
+					}
+				}
+				.harutaka-img {
+					left: 0;
+					position: absolute;
+					text-align: center;
+					top: 230px;
+					width: 320px;
+					width: 100%;
+					img {
+						height: auto;
+						width: 100%;
+					}
+				}
+			}
+
+			// area-harutaka-ef
+			.area-harutaka-ef {
 				.service-txt {
 					.harutaka_ef-logo {
 						img {

@@ -22,17 +22,12 @@
 					border-bottom: 2px $black solid;
 					color: $black;
 				}
-				a {
-					text-decoration: none;
-				}
 			}
-
 			li.current {
 				border-bottom: 2px $black solid;
 				color: $black;
 			}
 		}
-
 		.news-list {
 			.news-article {
 				border-bottom: 1px solid $secondary-lightgray;
@@ -42,7 +37,6 @@
 				padding: 16px 0;
 				position: relative;
 				width: 100%;
-
 				.news-txt {
 					width: 848px;
 					time {
@@ -78,7 +72,6 @@
 								position: absolute;
 								top: 4px;
 							}
-
 							&:hover {
 								opacity: .5;
 								text-decoration: none;
@@ -104,14 +97,21 @@
 		}
 	}
 }
+// IE11
+.ie {
+	.sec-news {
+		.wrap-btn {
+			a {
+				width: 96px;
+		}
+	}
+}
+}
 
 // Tablet
 @media (max-width: 1024px) {
-}
-
-// SP
-@media (max-width: 767px) {
 	.sec-news {
+		margin-top: 24px;
 		width: 100%;
 		.content-container {
 			padding: 0 16px;
@@ -125,33 +125,18 @@
 					float: left;
 					margin-right: 0rem;
 					padding: 8px 8px 4px;
-					// cursor: pointer;
-					// color: $secondary-gray;
-				}
-
-				// li.current {
-				//   color: $black;
-				//   border-bottom: 2px $black solid;
-				// }
+}
 			}
-
 			.news-list {
 				.news-article {
 					display: block;
 					margin: 16px 0;
 					padding: 16px 0;
 					width: 100%;
-					// position: relative;
-					// justify-content: space-around;
-					// border-bottom: 1px solid $secondary-lightgray;
-
 					.news-txt {
 						width: 100%;
-
 						time {
 							font-size: 1.3rem;
-							// padding-bottom: 8px;
-							// display: block;
 						}
 						.news-ttl {
 							margin-bottom: 20px;
@@ -177,11 +162,71 @@
 		}
 		.wrap-btn {
 			margin-top: 24px;
-			// text-align: center;
-			// a {
-			//   width: calc(var(--gridSize) * 1);
-			// }
 		}
+	}
+	.home .sec-news {
+		margin-top: 0;
+	}
+}
+
+// SP
+@media (max-width: 767px) {
+	.sec-news {
+		margin-top: 24px;
+		width: 100%;
+		.content-container {
+			padding: 0 16px;
+			width: 100%;
+			.news-nav {
+				font-size: 1.3rem;
+				margin: 0 0 16px;
+				overflow: hidden;
+				width: 100%;
+				li {
+					float: left;
+					margin-right: 0rem;
+					padding: 8px 8px 4px;
+				}
+			}
+			.news-list {
+				.news-article {
+					display: block;
+					margin: 16px 0;
+					padding: 16px 0;
+					width: 100%;
+					.news-txt {
+						width: 100%;
+						time {
+							font-size: 1.3rem;
+						}
+						.news-ttl {
+							margin-bottom: 20px;
+							a {
+								color: $black;
+								font-size: 1.4rem;
+								text-decoration: none;
+								&:hover {
+									text-decoration: underline;
+								}
+							}
+						}
+					}
+					.news-img {
+						width: 160px;
+						img {
+							height: auto;
+							width: 160px;
+						}
+					}
+				}
+			}
+		}
+		.wrap-btn {
+			margin-top: 24px;
+		}
+		}
+	.home .sec-news {
+		margin-top: 0;
 	}
 }
 
@@ -199,7 +244,6 @@
 		position: relative;
 		text-align: left;
 		width: $container-width;
-
 		.post-ttl-category {
 			color: $secondary-gray;
 			font-size: 2.4rem;
@@ -224,10 +268,9 @@
 			margin-bottom: 24px;
 		}
 	}
-
 	.wrap-post {
 		background-color: $bg-light-gray;
-		padding: 32px 0 64px;
+		padding: 32px 0 96px;
 		width: 100%;
 		.content-container {
 			background-color: $white;
@@ -251,7 +294,6 @@
 						width: 70px;
 					}
 				}
-
 				h3 {
 					font-size: 1.8rem;
 					margin: 40px 0 16px;
@@ -280,35 +322,19 @@
 					}
 				}
 			}
-
-			.news-nav {
-				border-bottom: 1px solid $secondary-gray;
-				font-size: 1.8rem;
-				margin: 0 0 16px;
-				overflow: hidden;
-				li {
-					color: $secondary-gray;
-					cursor: pointer;
-					float: left;
-					margin-right: 2rem;
-					padding: 8px 16px 4px;
-					&:hover {
-						border-bottom: 2px $black solid;
-						color: $black;
-					}
 				}
-
-				li.current {
-					border-bottom: 2px $black solid;
-					color: $black;
 				}
 			}
+
+// IE11
+.ie {
+	.news-post {
+		.wrap-post-ttl {
+			width: 1152px;
 		}
-		.wrap-btn {
-			margin-top: 64px;
-			text-align: center;
-			a {
-				width: calc(var(--gridSize) * 1);
+		.wrap-post {
+			.content-container {
+				width: 1152px;
 			}
 		}
 	}
@@ -386,7 +412,6 @@
 				font-size: 1.4rem;
 			}
 		}
-
 		.wrap-post {
 			padding: 32px 16px 64px;
 			width: 100%;
@@ -399,7 +424,6 @@
 						font-size: 2rem;
 						line-height: 1.8;
 					}
-
 					h3 {
 						font-size: 1.6rem;
 						line-height: 1.8;
