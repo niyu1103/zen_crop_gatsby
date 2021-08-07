@@ -12,11 +12,10 @@
 		width: 100%;
 		.webgl {
 			height: 800px;
-			left: 50%;
+			inset: 0;
+			margin: auto;
 			outline: none;
 			position: absolute;
-			top: 0;
-			transform: translateX(-50%);
 			transition-delay: .5s;
 			width: 768px;
 			z-index: 0;
@@ -24,11 +23,10 @@
 		.points {
 			height: 520px;
 			left: 50%;
+			margin-left: calc(-#{$container-width}/ 2);
 			position: absolute;
 			top: 64px;
-			transform: translateX(-50%);
 			width: $container-width;
-			z-index: 3;
 			.wrap-points {
 				height: 100%;
 				position: relative;
@@ -147,8 +145,8 @@
 				bottom: 0;
 				left: 50%;
 				margin-bottom: 56px;
+				margin-left: calc(-1152px / 2);
 				position: absolute;
-				transform: translateX(-50%);
 				.aboutus-txt {
 					font-size: 1.5rem;
 					margin-bottom: 12px;
@@ -161,25 +159,12 @@
 				}
 			}
 		}
-		.wrap-btn {
-			text-align: center;
-		}
-	}
-}
-// IE11
-.home.ie {
-	.aboutus-wrap-sec {
-		.points {
-			width: 1152px;
-			.wrap-points {
-				.point {
-					width: 384px;
-				}
-			}
-		}
 		.aboutus-main.ie {
 			background: url(/images/triangular.png) center 100px no-repeat;
 			background-size: 580px auto;
+		}
+		.wrap-btn {
+			text-align: center;
 		}
 	}
 }
@@ -191,15 +176,14 @@
 			height: 720px;
 			width: 100%;
 			.webgl {
-				height: 800px;
-				width: 768px;
+				height: 800px!important;
+				width: 768px!important;
 			}
 			.points {
 				height: 400px;
 				inset: 0;
 				margin: auto;
 				position: absolute;
-				transform: translateX(0);
 				width: 720px;
 				.wrap-points {
 					height: 100%;
@@ -246,8 +230,8 @@
 					bottom: 0;
 					left: 0;
 					margin-bottom: 40px;
+					margin-left: 0;
 					position: absolute;
-					transform: translateX(0);
 					width: 100%;
 					.aboutus-txt {
 						font-size: 1.4rem;
@@ -269,15 +253,17 @@
 			height: 720px;
 			width: 100%;
 			.webgl {
-				height: auto;
+				height: auto!important;
 				left: 0;
+				margin-left: 0;
 				top: 0;
-				transform: translateX(0);
-				width: 100%;
+				width: 100%!important;
 			}
 			.points {
+				border: 1px solid #00f;
 				height: calc(100% - 120px);
 				left: 0;
+				margin-left: 0;
 				position: absolute;
 				top: 120px;
 				width: 100%;
@@ -326,6 +312,7 @@
 					bottom: 0;
 					left: 0;
 					margin-bottom: 40px;
+					margin-left: 0;
 					position: absolute;
 					width: 100%;
 					.aboutus-txt {
@@ -345,7 +332,6 @@
 /*
  * About Us WebGl
  */
-
 .aboutus {
 	.webgl {
 		height: 100vh;
@@ -366,11 +352,6 @@
 		width: 100%;
 		z-index: 0;
 		.wrap-points {
-			height: 100vh;
-			left: 0;
-			position: relative;
-			top: 0;
-			width: 100%;
 			.point {
 				display: flex;
 				height: 20px;
@@ -403,51 +384,6 @@
 		section.sec {
 			height: 100vh;
 			scroll-snap-align: start;
-			width: 100%;
-		}
-	}
-}
-
-// IE11
-.aboutus.ie {
-	.webgl {
-		display: none;
-	}
-	.points {
-		height: 800px;
-		left: 0;
-		position: absolute;
-		top: 0;
-		width: 100%;
-		z-index: 100;
-		.wrap-points {
-			height: 800px;
-			width: 100%;
-			.point {
-				height: 20px;
-				left: 50%;
-				margin: 0;
-				opacity: 1;
-				position: absolute;
-				top: 50%;
-				width: 200px;
-			}
-			.point-0 {
-				transform: translateX(-50%) translateY(-100px);
-			}
-			.point-1 {
-				transform: translateX(-50%) translateY(70px);
-			}
-			.point-2 {
-				transform: translateX(-50%) translateY(180px);
-			}
-		}
-	}
-	.aboutus-wrap-sec {
-		height: 3200px;
-		width: 100%;
-		section.sec {
-			height: 800px;
 			width: 100%;
 		}
 	}
@@ -667,10 +603,10 @@
 				font-size: 1.5rem;
 				height: auto;
 				left: 50%;
+				margin-left: -320px;
 				position: absolute;
 				text-align: center;
-				top: calc(100% - 160px);
-				transform: translateX(-50%);
+				top: calc(100% - 200px);
 				transition-delay: 2s;
 				width: 720px;
 				z-index: 2;
@@ -680,9 +616,10 @@
 				color: $black;
 				height: 64px;
 				left: 50%;
+				margin-left: -60px;
 				opacity: 0;
 				position: fixed;
-				transform: translateX(-50%) translateY(-20px);
+				transform: translateY(-20px);
 				transition: all .7s 1s ease;
 				width: 120px;
 				.main-scroll-container {
@@ -705,9 +642,9 @@
 						display: block;
 						height: 40px;
 						left: 50%;
+						margin-left: -1px;
 						overflow: hidden;
 						position: absolute;
-						transform: translateX(-50%);
 						width: 1px;
 						&:before {
 							animation: scroll-down 2.4s 1.4s ease-in-out infinite normal;
@@ -723,28 +660,15 @@
 			}
 			.main-scroll.show {
 				opacity: 1;
-				transform: translateX(-50%) translateY(0);
-			}
-		}
-	}
-}
-
-//IE11
-.aboutus.ie {
-	.aboutus-wrap-sec {
-		.aboutus-main {
-			height: 800px;
-			.aboutus-txt {
-				top: 680px;
+				transform: translateY(-0);
 			}
 		}
 		.aboutus-main.ie {
 			background: url(/images/triangular.png) center center no-repeat;
-			background-size: 560px auto;
+			background-size: 700px auto;
 		}
 	}
 }
-
 // Tablet
 @media (max-width: 1024px) {
 	.aboutus {
@@ -761,11 +685,11 @@
 					font-size: 1.3rem;
 					height: auto;
 					left: 50%;
+					margin-left: -360px;
 					padding: 0 16px;
 					position: absolute;
 					text-align: center;
 					top: calc(100% - 180px);
-					transform: translateX(-50%);
 					width: 720px;
 					z-index: 2;
 				}
@@ -790,11 +714,11 @@
 					font-size: 1.3rem;
 					height: auto;
 					left: 0;
+					margin-left: 0;
 					padding: 0 16px;
 					position: absolute;
 					text-align: center;
 					top: calc(50% + 90px);
-					transform: translateX(0);
 					width: 100%;
 					z-index: 2;
 				}
@@ -830,10 +754,7 @@
 					text-align: center;
 					width: 720px;
 					.mv-top-line {
-						left: 0;
 						opacity: 0;
-						position: absolute;
-						top: 0;
 						transition: all .8s 1s ease-out;
 						&:before {
 							border-top: 1px solid $black;
@@ -844,6 +765,7 @@
 							top: 0;
 							width: 70px;
 						}
+
 						&:after {
 							border-top: 1px solid $black;
 							box-sizing: border-box;
@@ -863,10 +785,7 @@
 						transition: all .8s 1.5s ease-out;
 					}
 					.mv-bottom-line {
-						bottom: 0;
 						opacity: 0;
-						position: absolute;
-						right: 0;
 						transition: all .8s 1s ease-out;
 						&:before {
 							border-top: 1px solid $black;
@@ -914,23 +833,6 @@
 		}
 	}
 }
-
-//IE11
-.aboutus.ie {
-	.aboutus-wrap-sec {
-		.aboutus-vision {
-			display: block;
-			height: 800px;
-			.content-container {
-				width: 1152px;
-				h3 {
-					width: 720px;
-				}
-			}
-		}
-	}
-}
-
 // Tablet
 @media (max-width: 1024px) {
 	.aboutus {
@@ -943,6 +845,7 @@
 					height: auto;
 					margin: 0 0;
 					width: 100%;
+
 					h3 {
 						margin: 0 auto 24px;
 						padding: 16px 0 0;
@@ -1004,6 +907,7 @@
 			min-height: 100vh;
 			position: relative;
 			width: 100%;
+
 			/* IE対策に追加 */
 			.wrap-sec-ttl {
 				margin: 0 auto 32px;
@@ -1070,7 +974,7 @@
 					margin: 40px 0 0 0;
 					text-align: center;
 					a {
-						background-color: rgba(255, 255, 255, .4);
+						background-color: rgba(255, 255, 255, .2);
 						border: 1px $white solid;
 						color: $white;
 						text-decoration: none;
@@ -1082,25 +986,15 @@
 			}
 		}
 		section.aboutus-values.active {
-			// background-color: rgba(0, 0, 0, 0.3);
+			background-color: rgba(10, 10, 10, .2);
 		}
 	}
 }
-// IE11
+
 .aboutus.ie {
 	.aboutus-wrap-sec {
 		section.aboutus-values {
 			background-color: #222;
-			display: block;
-			height: 800px;
-			width: 100%;
-			/* IE対策に追加 */
-			.content-container {
-				width: 1152px;
-				.wrap-btn {
-					display: none;
-				}
-			}
 		}
 	}
 }
@@ -1240,22 +1134,6 @@
 		}
 	}
 }
-
-//IE11
-.aboutus.ie {
-	.aboutus-wrap-sec {
-		.aboutus-philosophy {
-			display: block;
-			height: 800px;
-			width: 100%;
-			/* IE対策に追加 */
-			.content-container {
-				width: 1152px;
-			}
-		}
-	}
-}
-
 // Tablet
 @media (max-width: 1024px) {
 	.aboutus {
@@ -1352,6 +1230,7 @@
 						top: 4px;
 					}
 				}
+
 				.value-txt {
 					color: $white;
 					display: block;
@@ -1389,9 +1268,11 @@
 			top: 5px;
 			transition: all .6s ease;
 			width: 58px;
+
 			&:hover {
 				opacity: .3;
 			}
+
 			.overlay-nav-inner {
 				border-top: 1px solid $white;
 				border-top: 1px solid rgba(215, 254, 6, 0);
@@ -1434,13 +1315,6 @@
 		display: block;
 		opacity: 1;
 		visibility: visible;
-	}
-}
-
-//IE11
-.aboutus.ie11 {
-	.overlay {
-		display: none;
 	}
 }
 

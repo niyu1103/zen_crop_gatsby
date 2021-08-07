@@ -27,6 +27,7 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-polyfill-io`,
     `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
