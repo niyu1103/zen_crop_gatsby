@@ -1,5 +1,5 @@
-import * as THREE from 'three';
-// import * as THREE from 'three'
+// import * as THREE from 'three';
+import * as THREE from '../libs/three.module.js';
 // import { isMobileCheck } from '../helpers';
 import { isMobile } from 'react-device-detect';
 import { randomNum } from '../math';

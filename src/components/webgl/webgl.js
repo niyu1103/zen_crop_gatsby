@@ -1,7 +1,7 @@
 // import { isHomeCheck, isMobileCheck, isAboutCheck, uA } from '../helpers';
 import { uA } from '../helpers';
-import * as THREE from 'three'
-// import * as THREE from '../libs/three.module.js';
+// import * as THREE from 'three'
+import * as THREE from '../libs/three.module.js';
 import { modelData } from './modelData';
 import PersCamera from './persCamera.js';
 // import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'

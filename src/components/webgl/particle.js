@@ -1,6 +1,6 @@
 // import { isHomeCheck, isMobileCheck, isAboutCheck } from '../helpers';
-import * as THREE from 'three'
-// import * as THREE from '../libs/three.module.js';
+// import * as THREE from 'three'
+import * as THREE from '../libs/three.module.js';
 import { modelData } from './modelData';
 import PersCamera from './persCamera.js';
 // import { randomNum } from '../math';
