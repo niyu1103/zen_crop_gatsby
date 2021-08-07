@@ -1,5 +1,5 @@
-// import * as THREE from '../libs/three.module.js';
-import * as THREE from 'three'
+import * as THREE from '../libs/three.module.js';
+// import * as THREE from 'three'
 import { randomNum, mapNum } from '../math'
 // import TWEEN from '@tweenjs/tween.js'
 export default class Philosophy extends THREE.Object3D {

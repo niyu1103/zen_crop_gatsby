@@ -1,5 +1,5 @@
-// import * as THREE from '../libs/three.module.js';
-import * as THREE from 'three'
+import * as THREE from '../libs/three.module.js';
+// import * as THREE from 'three'
 
 export default class Sea extends THREE.Object3D {
   constructor() {
