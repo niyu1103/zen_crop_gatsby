@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 /**
  * @license
  * Copyright 2010-2021 Three.js Authors
