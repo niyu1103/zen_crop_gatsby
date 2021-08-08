@@ -27,7 +27,12 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-polyfill-io`,
+    {
+      resolve: `gatsby-plugin-polyfill-io`,
+      options: {
+         features: [`IntersectionObserver`]
+      },
+    },
     `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
